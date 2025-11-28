@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Agency Portfolio | Webnor.me Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        'electric': '#00FF87',
+                        'purple': '#7B61FF',
+                        'dark': '#0A0A0A',
+                        'gray-dark': '#1A1A1A',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text { background: linear-gradient(135deg, #00FF87 0%, #7B61FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gradient-border { background: linear-gradient(135deg, #00FF87 0%, #7B61FF 100%); }
+        .card-hover { transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1); }
+        .card-hover:hover { transform: translateY(-10px) scale(1.02); }
+        .blob { animation: blob 7s infinite; }
+        @keyframes blob { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(30px, -50px) scale(1.1); } 66% { transform: translate(-20px, 20px) scale(0.9); } }
+        .marquee { animation: marquee 20s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .glow { box-shadow: 0 0 60px rgba(0, 255, 135, 0.3); }
+    </style>
+</head>
+<body class="bg-dark text-white font-sans antialiased overflow-x-hidden">
+    <!-- Background Blobs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="blob absolute top-0 left-0 w-96 h-96 bg-electric/20 rounded-full blur-3xl"></div>
+        <div class="blob absolute bottom-0 right-0 w-96 h-96 bg-purple/20 rounded-full blur-3xl" style="animation-delay: -3s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-lg border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">
+                <span class="gradient-text">NOVA</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#work" class="text-sm hover:text-electric transition">Work</a>
+                <a href="#services" class="text-sm hover:text-electric transition">Services</a>
+                <a href="#about" class="text-sm hover:text-electric transition">About</a>
+                <a href="#contact" class="text-sm hover:text-electric transition">Contact</a>
+            </div>
+            <a href="#contact" class="hidden md:block px-6 py-2 gradient-border text-dark text-sm font-semibold rounded-full hover:shadow-lg hover:shadow-electric/20 transition">
+                Let's Talk
+            </a>
+            <button id="mobileMenuBtn" class="md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark/95 backdrop-blur-lg">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#work" class="block text-sm">Work</a>
+                <a href="#services" class="block text-sm">Services</a>
+                <a href="#about" class="block text-sm">About</a>
+                <a href="#contact" class="block text-sm">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20 relative">
+        <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+            <div class="max-w-4xl">
+                <div class="inline-block px-4 py-2 border border-white/20 rounded-full text-sm mb-8">
+                    🚀 Award-winning digital agency
+                </div>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8">
+                    We create
+                    <span class="gradient-text">digital</span>
+                    experiences that
+                    <span class="gradient-text">matter</span>
+                </h1>
+                <p class="text-xl text-gray-400 max-w-2xl mb-12">
+                    Nova is a creative agency specializing in branding, web design, and digital marketing 
+                    for forward-thinking companies.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#work" class="px-8 py-4 gradient-border text-dark font-semibold rounded-full text-center hover:shadow-lg hover:shadow-electric/20 transition">
+                        View Our Work
+                    </a>
+                    <a href="#contact" class="px-8 py-4 border border-white/30 rounded-full text-center hover:bg-white/10 transition">
+                        Start a Project
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24">
+                <div class="text-center">
+                    <p class="text-4xl md:text-5xl font-bold gradient-text">200+</p>
+                    <p class="text-gray-400 mt-2">Projects Delivered</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl md:text-5xl font-bold gradient-text">50+</p>
+                    <p class="text-gray-400 mt-2">Happy Clients</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl md:text-5xl font-bold gradient-text">15</p>
+                    <p class="text-gray-400 mt-2">Team Members</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl md:text-5xl font-bold gradient-text">8</p>
+                    <p class="text-gray-400 mt-2">Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="py-8 border-y border-white/10 overflow-hidden">
+        <div class="marquee whitespace-nowrap">
+            <span class="text-4xl font-bold mx-8 text-white/20">BRANDING</span>
+            <span class="text-4xl font-bold mx-8 text-electric">★</span>
+            <span class="text-4xl font-bold mx-8 text-white/20">WEB DESIGN</span>
+            <span class="text-4xl font-bold mx-8 text-purple">★</span>
+            <span class="text-4xl font-bold mx-8 text-white/20">DEVELOPMENT</span>
+            <span class="text-4xl font-bold mx-8 text-electric">★</span>
+            <span class="text-4xl font-bold mx-8 text-white/20">MARKETING</span>
+            <span class="text-4xl font-bold mx-8 text-purple">★</span>
+            <span class="text-4xl font-bold mx-8 text-white/20">BRANDING</span>
+            <span class="text-4xl font-bold mx-8 text-electric">★</span>
+            <span class="text-4xl font-bold mx-8 text-white/20">WEB DESIGN</span>
+            <span class="text-4xl font-bold mx-8 text-purple">★</span>
+            <span class="text-4xl font-bold mx-8 text-white/20">DEVELOPMENT</span>
+            <span class="text-4xl font-bold mx-8 text-electric">★</span>
+            <span class="text-4xl font-bold mx-8 text-white/20">MARKETING</span>
+            <span class="text-4xl font-bold mx-8 text-purple">★</span>
+        </div>
+    </div>
+
+    <!-- Work Section -->
+    <section id="work" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-electric text-sm tracking-wider uppercase mb-4">Our Work</p>
+                <h2 class="text-4xl md:text-6xl font-bold">Featured <span class="gradient-text">Projects</span></h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="card-hover group relative bg-gray-dark rounded-3xl overflow-hidden">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" 
+                             alt="Project 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-electric/20 text-electric text-xs rounded-full">Web Design</span>
+                            <span class="px-3 py-1 bg-purple/20 text-purple text-xs rounded-full">Branding</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">TechFlow Dashboard</h3>
+                        <p class="text-gray-400">SaaS platform redesign with modern UI/UX</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="card-hover group relative bg-gray-dark rounded-3xl overflow-hidden md:mt-16">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop" 
+                             alt="Project 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-electric/20 text-electric text-xs rounded-full">E-Commerce</span>
+                            <span class="px-3 py-1 bg-purple/20 text-purple text-xs rounded-full">Development</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Luxe Fashion Store</h3>
+                        <p class="text-gray-400">Premium e-commerce experience</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="card-hover group relative bg-gray-dark rounded-3xl overflow-hidden">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop" 
+                             alt="Project 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-electric/20 text-electric text-xs rounded-full">Branding</span>
+                            <span class="px-3 py-1 bg-purple/20 text-purple text-xs rounded-full">Identity</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Mindful App</h3>
+                        <p class="text-gray-400">Complete brand identity for wellness app</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="card-hover group relative bg-gray-dark rounded-3xl overflow-hidden md:mt-16">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd8575fab8?w=800&h=600&fit=crop" 
+                             alt="Project 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-electric/20 text-electric text-xs rounded-full">Marketing</span>
+                            <span class="px-3 py-1 bg-purple/20 text-purple text-xs rounded-full">Campaign</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Spark Energy</h3>
+                        <p class="text-gray-400">Digital marketing campaign launch</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <a href="#" class="inline-flex items-center gap-2 px-8 py-4 border border-white/30 rounded-full hover:bg-white/10 transition">
+                    View All Projects
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-gray-dark">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-electric text-sm tracking-wider uppercase mb-4">What We Do</p>
+                <h2 class="text-4xl md:text-6xl font-bold">Our <span class="gradient-text">Services</span></h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="p-8 bg-dark rounded-3xl border border-white/10 hover:border-electric/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-electric/20 rounded-2xl mb-6 group-hover:bg-electric/30 transition">
+                        <svg class="w-7 h-7 text-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Branding</h3>
+                    <p class="text-gray-400 text-sm">Complete brand identity systems that make your business stand out from the competition.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-8 bg-dark rounded-3xl border border-white/10 hover:border-purple/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-purple/20 rounded-2xl mb-6 group-hover:bg-purple/30 transition">
+                        <svg class="w-7 h-7 text-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Web Design</h3>
+                    <p class="text-gray-400 text-sm">Beautiful, responsive websites that convert visitors into customers.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-8 bg-dark rounded-3xl border border-white/10 hover:border-electric/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-electric/20 rounded-2xl mb-6 group-hover:bg-electric/30 transition">
+                        <svg class="w-7 h-7 text-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Development</h3>
+                    <p class="text-gray-400 text-sm">Custom web applications built with the latest technologies and best practices.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="p-8 bg-dark rounded-3xl border border-white/10 hover:border-purple/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 flex items-center justify-center bg-purple/20 rounded-2xl mb-6 group-hover:bg-purple/30 transition">
+                        <svg class="w-7 h-7 text-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Marketing</h3>
+                    <p class="text-gray-400 text-sm">Data-driven digital marketing strategies that deliver measurable results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 gradient-border rounded-3xl opacity-50 blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" 
+                         alt="Our Team" class="relative rounded-3xl w-full glow">
+                </div>
+                <div>
+                    <p class="text-electric text-sm tracking-wider uppercase mb-4">About Us</p>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-8">
+                        We're a team of <span class="gradient-text">passionate</span> creators
+                    </h2>
+                    <div class="space-y-6 text-gray-400">
+                        <p>
+                            Founded in 2017, Nova has grown from a small design studio to a full-service 
+                            creative agency. We believe in the power of design to transform businesses 
+                            and create meaningful connections.
+                        </p>
+                        <p>
+                            Our diverse team brings together expertise in design, development, strategy, 
+                            and marketing to deliver comprehensive solutions for our clients.
+                        </p>
+                    </div>
+                    <div class="mt-12 flex gap-8">
+                        <div>
+                            <p class="text-3xl font-bold gradient-text">98%</p>
+                            <p class="text-gray-400 text-sm">Client Satisfaction</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold gradient-text">24/7</p>
+                            <p class="text-gray-400 text-sm">Support Available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-gray-dark">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-electric text-sm tracking-wider uppercase mb-4">Testimonials</p>
+                <h2 class="text-4xl md:text-6xl font-bold">What clients <span class="gradient-text">say</span></h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-dark rounded-3xl border border-white/10">
+                    <div class="flex mb-4">
+                        <svg class="w-5 h-5 text-electric" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-electric" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-electric" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-electric" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-electric" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-300 mb-6">"Nova transformed our online presence completely. Their creative approach and attention to detail exceeded our expectations."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" 
+                             alt="Client" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p class="font-semibold">Sarah Johnson</p>
+                            <p class="text-sm text-gray-400">CEO, TechFlow</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-dark rounded-3xl border border-white/10">
+                    <div class="flex mb-4">
+                        <svg class="w-5 h-5 text-electric" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-electric" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-electric" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-electric" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-electric" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-300 mb-6">"Working with Nova was an absolute pleasure. They understood our vision and delivered beyond what we imagined."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" 
+                             alt="Client" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p class="font-semibold">Michael Chen</p>
+                            <p class="text-sm text-gray-400">Founder, Mindful</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 bg-dark rounded-3xl border border-white/10">
+                    <div class="flex mb-4">
+                        <svg class="w-5 h-5 text-electric" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-electric" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-electric" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-electric" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 text-electric" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-gray-300 mb-6">"The team at Nova is incredibly talented and professional. Our new website has significantly increased our conversions."</p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" 
+                             alt="Client" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p class="font-semibold">Emily Davis</p>
+                            <p class="text-sm text-gray-400">CMO, Luxe Fashion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] gradient-border rounded-full opacity-10 blur-3xl"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <p class="text-electric text-sm tracking-wider uppercase mb-4">Get in Touch</p>
+            <h2 class="text-4xl md:text-6xl font-bold mb-8">
+                Let's create something <span class="gradient-text">amazing</span> together
+            </h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                Ready to start your next project? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            </p>
+            
+            <form class="max-w-xl mx-auto text-left space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm mb-2">Name</label>
+                        <input type="text" class="w-full bg-gray-dark border border-white/20 rounded-xl px-4 py-3 focus:border-electric outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2">Email</label>
+                        <input type="email" class="w-full bg-gray-dark border border-white/20 rounded-xl px-4 py-3 focus:border-electric outline-none transition">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm mb-2">Subject</label>
+                    <input type="text" class="w-full bg-gray-dark border border-white/20 rounded-xl px-4 py-3 focus:border-electric outline-none transition">
+                </div>
+                <div>
+                    <label class="block text-sm mb-2">Message</label>
+                    <textarea rows="5" class="w-full bg-gray-dark border border-white/20 rounded-xl px-4 py-3 focus:border-electric outline-none transition resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 gradient-border text-dark font-semibold rounded-xl hover:shadow-lg hover:shadow-electric/20 transition">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <a href="#" class="text-2xl font-bold">
+                    <span class="gradient-text">NOVA</span>
+                </a>
+                <div class="flex gap-6">
+                    <a href="#" class="text-gray-400 hover:text-electric transition">Twitter</a>
+                    <a href="#" class="text-gray-400 hover:text-electric transition">Instagram</a>
+                    <a href="#" class="text-gray-400 hover:text-electric transition">Dribbble</a>
+                    <a href="#" class="text-gray-400 hover:text-electric transition">LinkedIn</a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-400">© 2025 Nova Creative Agency. All rights reserved.</p>
+                <p class="text-sm text-gray-400">Template by <a href="https://webnor.me" class="text-electric hover:underline">Webnor.me</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
