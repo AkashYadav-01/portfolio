@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Collection | Webnor.me</title>
+    <meta name="description" content="Browse Webnor.me's curated template library for portfolio, dashboard, and e-commerce experiences.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#6366f1',
+                        dark: '#0f0f0f',
+                        surface: '#1a1a1a',
+                        border: '#2a2a2a'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .template-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .template-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .template-card:hover .template-image {
+            transform: scale(1.02);
+        }
+
+        .template-card:hover .template-overlay {
+            opacity: 1;
+        }
+
+        .template-image {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .template-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .browser-mockup {
+            border-radius: 8px;
+            overflow: hidden;
+            background: #1a1a1a;
+        }
+
+        .browser-header {
+            background: #2a2a2a;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .browser-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .browser-url {
+            flex: 1;
+            background: #1a1a1a;
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-size: 12px;
+            color: #666;
+            margin-left: 12px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tag {
+            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-dark text-white font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-md border-b border-border">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <span class="text-2xl font-bold text-white tracking-tighter">Webnor<span class="text-brand">.me</span></span>
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#services" class="text-white/70 hover:text-white transition-colors text-sm">Services</a>
+                    <a href="templates.html" class="text-white/70 hover:text-white transition-colors text-sm">Templates</a>
+                    <a href="index.html#process" class="text-white/70 hover:text-white transition-colors text-sm">Process</a>
+                    <a href="index.html#why-us" class="text-white/70 hover:text-white transition-colors text-sm">Why Us</a>
+                    <a href="index.html#contact" class="text-white/70 hover:text-white transition-colors text-sm">Contact</a>
+                    <a href="index.html#contact" class="px-4 py-2 bg-brand hover:bg-brand/90 transition-colors rounded-lg text-sm font-medium">
+                        Get a Quote
+                    </a>
+                </div>
+                
+                <button id="mobileMenuBtn" class="md:hidden p-2">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-dark border-t border-border">
+            <div class="px-6 py-6 space-y-4">
+                <a href="index.html#services" class="block text-white/70 hover:text-white">Services</a>
+                <a href="templates.html" class="block text-white/70 hover:text-white">Templates</a>
+                <a href="index.html#process" class="block text-white/70 hover:text-white">Process</a>
+                <a href="index.html#why-us" class="block text-white/70 hover:text-white">Why Us</a>
+                <a href="index.html#contact" class="block text-white/70 hover:text-white">Contact</a>
+                <a href="index.html#contact" class="inline-block px-4 py-2 bg-brand rounded-lg text-sm font-medium">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-10 left-1/3 w-72 h-72 bg-brand/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="max-w-3xl fade-in">
+                <p class="text-sm text-white/60 uppercase tracking-[0.3em] mb-4">Template Library</p>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    Modern building blocks crafted with the <span class="gradient-text">Webnor</span> aesthetic.
+                </h1>
+                <p class="text-lg text-white/60 mb-10">
+                    Start faster with polished layouts for portfolios, dashboards, and e-commerce brands. Every template matches our core design system—dark UI, neon gradients, and precise spacing.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#portfolio" class="px-6 py-3 bg-brand hover:bg-brand/90 rounded-lg font-medium inline-flex items-center space-x-2">
+                        <span>Jump to Portfolio</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                    <a href="index.html#contact" class="px-6 py-3 bg-surface border border-border hover:border-brand/50 rounded-lg font-medium inline-flex items-center space-x-2">
+                        <span>Request Customization</span>
+                        <i class="fas fa-magic-wand-sparkles text-brand"></i>
+                    </a>
+                </div>
+                <div class="flex flex-wrap items-center gap-6 mt-10 text-sm text-white/60">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check text-green-400"></i>
+                        <span>Built with Tailwind utility classes</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-bolt text-yellow-400"></i>
+                        <span>Optimized sections for conversions & UX</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-layer-group text-brand"></i>
+                        <span>Extend with AI automations, CMS, or code</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 flex flex-wrap gap-4 text-sm">
+                <a href="#portfolio" class="px-4 py-2 bg-surface border border-border rounded-full text-white/70 hover:text-white hover:border-brand">Portfolio</a>
+                <a href="#ecommerce" class="px-4 py-2 bg-surface border border-border rounded-full text-white/70 hover:text-white hover:border-brand">E-Commerce</a>
+                <a href="#dashboard" class="px-4 py-2 bg-surface border border-border rounded-full text-white/70 hover:text-white hover:border-brand">Dashboards</a>
+                <a href="index.html" class="px-4 py-2 bg-dark border border-border rounded-full text-white/70 hover:text-white">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-6 fade-in">
+                <div class="p-6 bg-surface border border-border rounded-2xl">
+                    <p class="text-white/50 text-sm mb-2">Total Templates</p>
+                    <p class="text-4xl font-bold gradient-text">30+</p>
+                    <p class="text-white/40 text-sm">Fresh drops every quarter.</p>
+                </div>
+                <div class="p-6 bg-surface border border-border rounded-2xl">
+                    <p class="text-white/50 text-sm mb-2">Design Language</p>
+                    <p class="text-4xl font-bold gradient-text">Unified</p>
+                    <p class="text-white/40 text-sm">Typography, grid, color tokens.</p>
+                </div>
+                <div class="p-6 bg-surface border border-border rounded-2xl">
+                    <p class="text-white/50 text-sm mb-2">Usage Rights</p>
+                    <p class="text-4xl font-bold gradient-text">Commercial</p>
+                    <p class="text-white/40 text-sm">Use in client or internal work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Templates -->
+    <section id="portfolio" class="py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 fade-in">
+                <div>
+                    <span class="tag bg-brand/20 text-brand mb-4 inline-block">Portfolio</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Showcase Websites</h2>
+                    <p class="text-white/60 max-w-2xl">Perfect for creators, agencies, and studios that need a polished story, case study layouts, and conversion-ready CTAs.</p>
+                </div>
+                <a href="index.html#contact" class="text-sm text-brand hover:text-white transition-colors inline-flex items-center space-x-2">
+                    <span>Need this in Webflow / React?</span>
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Template 1 -->
+                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">portfolio/template-1-minimal/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="portfolio/template-1-minimal/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="portfolio/template-1-minimal/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Minimal Clean</h3>
+                            <span class="tag bg-blue-500/20 text-blue-400">Personal</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Clean, modern design with coral accents, smooth animations, and elegant project filtering.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Responsive</span>
+                            <span class="px-2 py-1 bg-border rounded">Animations</span>
+                            <span class="px-2 py-1 bg-border rounded">Filtering</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template 2 -->
+                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">portfolio/template-2-creative-agency/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="portfolio/template-2-creative-agency/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="portfolio/template-2-creative-agency/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Creative Agency</h3>
+                            <span class="tag bg-orange-500/20 text-orange-400">Agency</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Bold hero, marquee logos, and staggered services grid with custom cursor interactions.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Dark Theme</span>
+                            <span class="px-2 py-1 bg-border rounded">Custom Cursor</span>
+                            <span class="px-2 py-1 bg-border rounded">Parallax</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template 3 -->
+                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">portfolio/template-3-developer/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="portfolio/template-3-developer/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="portfolio/template-3-developer/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Developer Portfolio</h3>
+                            <span class="tag bg-green-500/20 text-green-400">Developer</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Terminal-inspired storytelling with typing effect, skill stack pills, and modal case studies.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Terminal Style</span>
+                            <span class="px-2 py-1 bg-border rounded">Typing Effect</span>
+                            <span class="px-2 py-1 bg-border rounded">Case Studies</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Template 4 -->
+                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">portfolio/template-4-photography/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="portfolio/template-4-photography/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="portfolio/template-4-photography/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Photography Studio</h3>
+                            <span class="tag bg-yellow-500/20 text-yellow-400">Creative</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Full-bleed slider, masonry gallery, and booking form with luxe gold accents.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Lightbox</span>
+                            <span class="px-2 py-1 bg-border rounded">Gallery</span>
+                            <span class="px-2 py-1 bg-border rounded">Booking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template 5 -->
+                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">portfolio/template-5-corporate/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="portfolio/template-5-corporate/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="portfolio/template-5-corporate/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Corporate HQ</h3>
+                            <span class="tag bg-blue-500/20 text-blue-400">Enterprise</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Structured metrics, leadership bios, and multi-column footer built for professional orgs.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Hero Stats</span>
+                            <span class="px-2 py-1 bg-border rounded">Team Grid</span>
+                            <span class="px-2 py-1 bg-border rounded">Trust Logos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template 6 -->
+                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">portfolio/template-6-dark-luxury/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="portfolio/template-6-dark-luxury/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="portfolio/template-6-dark-luxury/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Dark Luxury</h3>
+                            <span class="tag bg-amber-500/20 text-amber-400">Luxury</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Moody gradients, serif headlines, and immersive testimonials for premium brands.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Parallax</span>
+                            <span class="px-2 py-1 bg-border rounded">Serif Type</span>
+                            <span class="px-2 py-1 bg-border rounded">Stories</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Template 7 -->
+                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">portfolio/template-7-colorful-creative/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="portfolio/template-7-colorful-creative/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="portfolio/template-7-colorful-creative/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Colorful Creative</h3>
+                            <span class="tag bg-pink-500/20 text-pink-400">Playful</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Vibrant gradients, blob shapes, and carousel testimonials built for expressive teams.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Gradients</span>
+                            <span class="px-2 py-1 bg-border rounded">Blob Art</span>
+                            <span class="px-2 py-1 bg-border rounded">Testimonials</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template 8 -->
+                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">portfolio/template-8-architecture/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="portfolio/template-8-architecture/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="portfolio/template-8-architecture/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Architecture Firm</h3>
+                            <span class="tag bg-gray-500/20 text-gray-300">Structured</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Split hero, project timeline, and awards grid tailored to architecture studios.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Timeline</span>
+                            <span class="px-2 py-1 bg-border rounded">Awards</span>
+                            <span class="px-2 py-1 bg-border rounded">Case Grid</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template 9 -->
+                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">portfolio/template-9-writer/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="portfolio/template-9-writer/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="portfolio/template-9-writer/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Writer Personal</h3>
+                            <span class="tag bg-amber-500/20 text-amber-400">Editorial</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Magazine typography, featured essays, and newsletter CTA for storytellers.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Editorial</span>
+                            <span class="px-2 py-1 bg-border rounded">Essays</span>
+                            <span class="px-2 py-1 bg-border rounded">Newsletter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template 10 -->
+                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">portfolio/template-10-fitness/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="portfolio/template-10-fitness/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="portfolio/template-10-fitness/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Fitness Coach</h3>
+                            <span class="tag bg-red-500/20 text-red-400">Wellness</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Program highlights, class schedule, and progress stats wrapped in high-energy gradients.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Programs</span>
+                            <span class="px-2 py-1 bg-border rounded">Schedule</span>
+                            <span class="px-2 py-1 bg-border rounded">Progress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-Commerce Templates -->
+    <section id="ecommerce" class="py-16 border-t border-border/60">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 fade-in">
+                <div>
+                    <span class="tag bg-green-500/20 text-green-400 mb-4 inline-block">E-Commerce</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Storefront Experiences</h2>
+                    <p class="text-white/60 max-w-2xl">Conversion-minded layouts with product storytelling, merchandising grids, and ready-to-plug payment CTAs.</p>
+                </div>
+                <a href="index.html#contact" class="text-sm text-green-400 hover:text-white transition-colors inline-flex items-center space-x-2">
+                    <span>Need Shopify / Woo build?</span>
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- E-Commerce Template 1 -->
+                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">ecommerce/template-1-fashion/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="ecommerce/template-1-fashion/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="ecommerce/template-1-fashion/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Fashion Boutique</h3>
+                            <span class="tag bg-pink-500/20 text-pink-400">Lookbook</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Editorial hero with curated product stories and shoppable carousel sections.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Hero</span>
+                            <span class="px-2 py-1 bg-border rounded">Carousel</span>
+                            <span class="px-2 py-1 bg-border rounded">CTA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-Commerce Template 2 -->
+                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">ecommerce/template-2-electronics/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="ecommerce/template-2-electronics/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="ecommerce/template-2-electronics/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Electronics Hub</h3>
+                            <span class="tag bg-cyan-500/20 text-cyan-400">Tech</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Spec-driven hero, comparison tables, and support sections for tech products.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Specs</span>
+                            <span class="px-2 py-1 bg-border rounded">Comparison</span>
+                            <span class="px-2 py-1 bg-border rounded">FAQ</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">ecommerce/template-3-furniture/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="ecommerce/template-3-furniture/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="ecommerce/template-3-furniture/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Furniture Loft</h3>
+                            <span class="tag bg-amber-500/20 text-amber-400">Lifestyle</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Room-by-room storytelling with sticky add-to-cart highlights and bundle rows.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Rooms</span>
+                            <span class="px-2 py-1 bg-border rounded">Sticky CTA</span>
+                            <span class="px-2 py-1 bg-border rounded">Bundles</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">ecommerce/template-4-grocery/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="ecommerce/template-4-grocery/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="ecommerce/template-4-grocery/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Grocery Delivery</h3>
+                            <span class="tag bg-green-500/20 text-green-400">Local</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Category chips, delivery steps, and subscription CTA for neighborhood grocers.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Categories</span>
+                            <span class="px-2 py-1 bg-border rounded">Steps</span>
+                            <span class="px-2 py-1 bg-border rounded">Subscription</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">ecommerce/template-5-beauty/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="ecommerce/template-5-beauty/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="ecommerce/template-5-beauty/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Beauty Rituals</h3>
+                            <span class="tag bg-purple-500/20 text-purple-400">Premium</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Before/after slider, bundle builder, and review carousel for skincare lines.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Before/After</span>
+                            <span class="px-2 py-1 bg-border rounded">Bundles</span>
+                            <span class="px-2 py-1 bg-border rounded">Reviews</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">ecommerce/template-6-sports/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="ecommerce/template-6-sports/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="ecommerce/template-6-sports/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Sports Gear</h3>
+                            <span class="tag bg-orange-500/20 text-orange-400">Performance</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Athlete endorsements, kit builder, and sticky CTA for gear drops.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Athletes</span>
+                            <span class="px-2 py-1 bg-border rounded">Kit Builder</span>
+                            <span class="px-2 py-1 bg-border rounded">CTA</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">ecommerce/template-7-jewelry/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="ecommerce/template-7-jewelry/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="ecommerce/template-7-jewelry/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Jewelry Atelier</h3>
+                            <span class="tag bg-yellow-500/20 text-yellow-400">Luxury</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Macro photography hero, story timeline, and bespoke order form.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Macro</span>
+                            <span class="px-2 py-1 bg-border rounded">Timeline</span>
+                            <span class="px-2 py-1 bg-border rounded">Custom Form</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">ecommerce/template-8-bookstore/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="ecommerce/template-8-bookstore/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="ecommerce/template-8-bookstore/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Indie Bookstore</h3>
+                            <span class="tag bg-blue-500/20 text-blue-400">Editorial</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Featured shelf hero, author spotlights, and events calendar.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Shelves</span>
+                            <span class="px-2 py-1 bg-border rounded">Authors</span>
+                            <span class="px-2 py-1 bg-border rounded">Events</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">ecommerce/template-9-organic/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="ecommerce/template-9-organic/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="ecommerce/template-9-organic/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Organic Goods</h3>
+                            <span class="tag bg-green-500/20 text-green-400">Sustainable</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Story-driven hero, impact stats, and recurring subscription CTA.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Impact</span>
+                            <span class="px-2 py-1 bg-border rounded">Stats</span>
+                            <span class="px-2 py-1 bg-border rounded">Subscription</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">ecommerce/template-10-pet-store/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="ecommerce/template-10-pet-store/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="ecommerce/template-10-pet-store/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Pet Supply</h3>
+                            <span class="tag bg-orange-500/20 text-orange-400">Playful</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Pet parent personas, product bundles, and FAQ accordion with icons.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Personas</span>
+                            <span class="px-2 py-1 bg-border rounded">Bundles</span>
+                            <span class="px-2 py-1 bg-border rounded">FAQ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Templates -->
+    <section id="dashboard" class="py-16 border-t border-border/60">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 fade-in">
+                <div>
+                    <span class="tag bg-cyan-500/20 text-cyan-400 mb-4 inline-block">Dashboards</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Data Products</h2>
+                    <p class="text-white/60 max-w-2xl">System dashboards with modular cards, filterable tables, and ready-to-wire data visualizations.</p>
+                </div>
+                <a href="index.html#contact" class="text-sm text-cyan-400 hover:text-white transition-colors inline-flex items-center space-x-2">
+                    <span>Connect to live APIs</span>
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">dashboard/template-1-analytics/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="dashboard/template-1-analytics/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="dashboard/template-1-analytics/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Analytics Overview</h3>
+                            <span class="tag bg-cyan-500/20 text-cyan-400">KPIs</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Hero metrics, segmented charts, and insight drawer for exec teams.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">KPIs</span>
+                            <span class="px-2 py-1 bg-border rounded">Charts</span>
+                            <span class="px-2 py-1 bg-border rounded">Insights</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">dashboard/template-2-admin-panel/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="dashboard/template-2-admin-panel/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="dashboard/template-2-admin-panel/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Admin Panel</h3>
+                            <span class="tag bg-blue-500/20 text-blue-400">Ops</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Sidebar navigation, activity feed, and editable tables built for ops squads.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Sidebar</span>
+                            <span class="px-2 py-1 bg-border rounded">Tables</span>
+                            <span class="px-2 py-1 bg-border rounded">Activity</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">dashboard/template-3-ecommerce/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="dashboard/template-3-ecommerce/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="dashboard/template-3-ecommerce/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">E-Commerce Ops</h3>
+                            <span class="tag bg-emerald-500/20 text-emerald-400">Revenue</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Revenue overview, shipping timeline, and cohort retention panels.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Revenue</span>
+                            <span class="px-2 py-1 bg-border rounded">Timeline</span>
+                            <span class="px-2 py-1 bg-border rounded">Cohorts</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">dashboard/template-4-project-management/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="dashboard/template-4-project-management/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="dashboard/template-4-project-management/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Project HQ</h3>
+                            <span class="tag bg-indigo-500/20 text-indigo-400">PM</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Kanban summary, roadmap timeline, and workload heatmap.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Kanban</span>
+                            <span class="px-2 py-1 bg-border rounded">Timeline</span>
+                            <span class="px-2 py-1 bg-border rounded">Workload</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">dashboard/template-5-crm/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="dashboard/template-5-crm/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="dashboard/template-5-crm/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">CRM Workspace</h3>
+                            <span class="tag bg-pink-500/20 text-pink-400">Sales</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Pipeline funnel, deal board, and call note drawer for reps.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Pipeline</span>
+                            <span class="px-2 py-1 bg-border rounded">Deal Board</span>
+                            <span class="px-2 py-1 bg-border rounded">Notes</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">dashboard/template-6-social-media/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="dashboard/template-6-social-media/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="dashboard/template-6-social-media/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Social Media HQ</h3>
+                            <span class="tag bg-purple-500/20 text-purple-400">Content</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Calendar view, audience growth charts, and performance table.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Calendar</span>
+                            <span class="px-2 py-1 bg-border rounded">Growth</span>
+                            <span class="px-2 py-1 bg-border rounded">Table</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">dashboard/template-7-finance/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="dashboard/template-7-finance/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="dashboard/template-7-finance/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Finance Control</h3>
+                            <span class="tag bg-yellow-500/20 text-yellow-400">Fintech</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Forecast charts, expense breakdowns, and approval queue.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Forecast</span>
+                            <span class="px-2 py-1 bg-border rounded">Expenses</span>
+                            <span class="px-2 py-1 bg-border rounded">Approvals</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">dashboard/template-8-healthcare/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="dashboard/template-8-healthcare/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="dashboard/template-8-healthcare/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Healthcare Portal</h3>
+                            <span class="tag bg-green-500/20 text-green-400">Health</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Vitals cards, appointment list, and patient notes drawer.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Vitals</span>
+                            <span class="px-2 py-1 bg-border rounded">Appointments</span>
+                            <span class="px-2 py-1 bg-border rounded">Notes</span>
+                        </div>
+                    </div>
+                </div>
+                                <div class="template-card bg-surface border border-border rounded-2xl overflow-hidden fade-in">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-dot bg-red-500"></div>
+                            <div class="browser-dot bg-yellow-500"></div>
+                            <div class="browser-dot bg-green-500"></div>
+                            <div class="browser-url">dashboard/template-9-education/index.html</div>
+                        </div>
+                        <div class="relative aspect-video overflow-hidden bg-black">
+                            <iframe src="dashboard/template-9-education/index.html" loading="lazy" class="template-image w-full h-full border-0 pointer-events-none" style="transform: scale(0.5); transform-origin: top left; width: 200%; height: 200%;"></iframe>
+                            <div class="template-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent flex items-end justify-center pb-8">
+                                <a href="dashboard/template-9-education/index.html" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-brand hover:bg-brand/90 transition-colors rounded-lg font-medium inline-flex items-center space-x-2">
+                                    <span>View Demo</span>
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-3">
+                            <h3 class="text-xl font-semibold">Education Hub</h3>
+                            <span class="tag bg-blue-500/20 text-blue-300">Learning</span>
+                        </div>
+                        <p class="text-white/60 text-sm mb-4">Course analytics, student progress, and messaging drawer for cohorts.</p>
+                        <div class="flex flex-wrap gap-2 text-xs text-white/70">
+                            <span class="px-2 py-1 bg-border rounded">Analytics</span>
+                            <span class="px-2 py-1 bg-border rounded">Progress</span>
+                            <span class="px-2 py-1 bg-border rounded">Inbox</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="p-10 bg-gradient-to-br from-brand/20 via-purple-500/20 to-pink-500/20 border border-brand/30 rounded-3xl fade-in">
+                <p class="text-sm uppercase tracking-[0.3em] text-white/50 mb-4">Launch With Confidence</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Need a bespoke experience?</h2>
+                <p class="text-white/60 mb-8">Mix and match sections from any template or have us craft something custom—from strategy and design to production-ready builds.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="index.html#contact" class="px-8 py-4 bg-dark border border-white/10 hover:border-white/30 rounded-xl font-medium inline-flex items-center space-x-2">
+                        <i class="fas fa-envelope"></i>
+                        <span>Book a Call</span>
+                    </a>
+                    <a href="mailto:hello@webnor.me" class="px-8 py-4 bg-brand hover:bg-brand/80 rounded-xl font-medium inline-flex items-center space-x-2">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>hello@webnor.me</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-border">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div>
+                    <div class="flex items-center space-x-2 mb-3">
+                        <div class="w-8 h-8 bg-gradient-to-br from-brand to-purple-500 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">W</span>
+                        </div>
+                        <span class="font-semibold text-lg">webnor.me</span>
+                    </div>
+                    <p class="text-white/50 text-sm">Templates crafted for speed, polish, and scalability.</p>
+                </div>
+                <div class="flex items-center space-x-4 text-white/50">
+                    <a href="https://twitter.com" class="hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com" class="hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com" class="hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="mt-8 text-xs text-white/40 flex flex-wrap gap-4">
+                <span>&copy; 2025 Webnor.me. All rights reserved.</span>
+                <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), index * 50);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        fadeElements.forEach(el => fadeObserver.observe(el));
+    </script>
+</body>
+</html>
